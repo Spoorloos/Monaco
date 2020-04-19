@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -10,6 +11,15 @@
 				margin: 0;
 				padding: 0;
 				overflow: hidden;
+			}
+			.backgroundimgclass {
+				width: 633px;
+				height: 416px;
+				object-fit: contain;
+			}
+
+			.transparentItem {
+				background-color: transparent;
 			}
 		</style>
         <meta charset="utf-8" />
@@ -1308,8 +1318,27 @@
 				getText = function() {
 					return editor.getValue();
 				}
-				document.getElementsByClassName("lines-content monaco-editor-background")[0].style.backgroundImage="url( )" //Your Gif/Picture link
-                document.getElementsByClassName("margin")[0].style.backgroundImage="url( )" //Your Gif/Picture link
+
+				
+				setBackgroundImage = function(path) {
+					if (path == "Transparent") {
+						document.getElementsByClassName("lines-content monaco-editor-background")[0].classList.add("transparentItem")
+						document.getElementsByClassName("margin")[0].classList.add("transparentItem")
+					} else {
+						document.getElementsByClassName("lines-content monaco-editor-background")[0].style.backgroundImage="url(" + path + ")" 
+						document.getElementsByClassName("lines-content monaco-editor-background")[0].classList.add("backgroundimgclass")
+						document.getElementsByClassName("margin")[0].style.backgroundImage="url(" + path + ")" 
+					}
+				}
+				
+				setTheme = function(themeName) {
+					if (themeName == "Dark") {
+						monaco.editor.setTheme("net-theme-dark");
+					}
+					if (themeName == "Light") {
+						monaco.editor.setTheme("net-theme-light");
+					}
+				}
 				
 				setText = function(x) {
 					editor.setValue(x);
