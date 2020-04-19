@@ -1257,8 +1257,16 @@
 					}
 				});
 				
-				monaco.editor.defineTheme('cyber-theme', {
+				monaco.editor.defineTheme('dark', {
 					base: 'vs-dark',
+					inherit: true,
+					rules: [
+						{ token: 'global', foreground: 'ffffff' },
+					]
+				});
+				
+				monaco.editor.defineTheme('light', {
+					base: 'vs-light',
 					inherit: true,
 					rules: [
 						{ token: 'global', foreground: 'ffffff' },
@@ -1271,7 +1279,7 @@
 						"",
 					].join('\n'),
 					language: 'lua',
-					theme: "cyber-theme",
+					theme: "light",
 					folding: true,
 					scrollbar: {
 						verticalHasArrows: true,
