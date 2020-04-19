@@ -1257,19 +1257,27 @@
 					}
 				});
 				
-				monaco.editor.defineTheme('dark', {
-					base: 'vs-dark',
+				monaco.editor.defineTheme('net-theme-light', {
+					base: 'vs',
 					inherit: true,
 					rules: [
-						{ token: 'global', foreground: 'ffffff' },
+						{ token: 'global', foreground: '000000' },
+						{ token: 'keyword', foreground: 'ff6a00' },
+						{ token: 'comment', foreground: '666666' },
+						{ token: 'number', foreground: 'ffc600' },
+						{ token: 'string', foreground: 'ff8c3a' },
 					]
 				});
 				
-				monaco.editor.defineTheme('light', {
-					base: 'vs-light',
+				monaco.editor.defineTheme('net-theme-dark', {
+					base: 'vs-dark',
 					inherit: true,
 					rules: [
-						{ token: 'global', foreground: 'ffffff' },
+						{ token: 'global', foreground: 'FFFFFF', fontStyle: "bold" },
+						{ token: 'keyword', foreground: 'ff6a00', fontStyle: "bold" },
+						{ token: 'comment', foreground: '666666' },
+						{ token: 'number', foreground: 'ffc600' },
+						{ token: 'string', foreground: 'ff8c3a' },
 					]
 				});
 				
@@ -1279,7 +1287,7 @@
 						"",
 					].join('\n'),
 					language: 'lua',
-					theme: "light",
+					theme: "net-theme-light",
 					folding: true,
 					scrollbar: {
 						verticalHasArrows: true,
